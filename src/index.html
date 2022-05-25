@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Piral Instance</title>
+    <link rel="stylesheet" href="./style.scss" />
+    <link
+      rel="manifest"
+      crossorigin="use-credentials"
+      href="manifest.webmanifest"
+    />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          console.log('html', navigator.serviceWorker);
+
+          navigator.serviceWorker
+            .register('./sw.js')
+            .then((res) => console.log('registeration', res.scope))
+            .catch((e) => {
+              console.log('failed');
+              console.log('message', e.message());
+            });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./index.tsx"></script>
+  </body>
+</html>

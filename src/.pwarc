@@ -1,0 +1,8 @@
+{
+  updateStrategy: 'all',
+  responseStrategy: 'network-first',
+  excludes: ['**/.*', '**/*.map', '**/*.gz'],
+  cacheMaps: [],
+  navigationPreload: false,
+  caches: 'all',
+}
